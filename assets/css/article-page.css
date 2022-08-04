@@ -220,16 +220,15 @@ img {
 }
 
 .forex-hero__author-data {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  gap: 10px;
 }
 
 .forex-hero__title {
-  max-width: 570px;
+  max-width: 550px;
   color: #03206c;
   font-size: clamp(1.31rem, calc(0.61rem + 3.54vw), 3.13rem);
   font-weight: 700;
@@ -268,6 +267,18 @@ img {
       grid-template-columns: repeat(3, auto);
   max-width: 122px;
   gap: 26px;
+}
+
+.forex-hero__description-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35px 1fr;
+      grid-template-columns: 35px 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
 }
 
 .forex-article__note-container {
@@ -347,9 +358,40 @@ img {
   padding: 0 0 50px;
 }
 
+.forex-hero {
+  background-image: url("/img/forex-trader-bot.png");
+  background-position: 75% 100px;
+  background-repeat: no-repeat;
+  background-size: 40%;
+}
+
+@media (max-width: 1198px) {
+  .forex-hero__title {
+    font-size: clamp(1.31rem, calc(0.85rem + 2.32vw), 2.5rem);
+  }
+}
+
 @media (max-width: 991.98px) {
   .article-page__list {
     display: none;
+  }
+  .forex-hero__title {
+    font-size: clamp(1.31rem, calc(1.09rem + 1.1vw), 1.88rem);
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .forex-hero__title {
+    font-size: 40px;
+    max-width: 470px;
+  }
+  .forex-hero__header {
+    margin-top: 230px;
+  }
+  .forex-hero {
+    background-position: 50% 80px;
+    background-size: 60%;
   }
 }
 
@@ -362,9 +404,6 @@ img {
   }
   .forex-why-use__title {
     margin-bottom: 30px;
-  }
-  .forex-hero__header {
-    margin-top: 40px;
   }
   .forex-article__note-container {
     -ms-grid-columns: 1fr;
@@ -388,8 +427,9 @@ img {
     margin-bottom: 30px;
   }
   .forex-hero__title {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-bottom: 10px;
+    max-width: 350px;
   }
   .forex-hero__author {
     margin-bottom: 20px;
@@ -420,11 +460,15 @@ img {
   .forex-why-use__img-description {
     line-height: 20px;
   }
+  .forex-hero__header {
+    margin-top: 50%;
+  }
 }
 
 @media (max-width: 320px) {
   .forex-hero__title {
     font-size: 24px;
+    max-width: 260px;
   }
 }
 /*# sourceMappingURL=article-page.css.map */

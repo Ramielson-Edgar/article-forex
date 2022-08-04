@@ -252,12 +252,13 @@ img {
 }
 
 .forex-hero__author-data {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
 }
 
 .forex-hero__title {
-  max-width: 570px;
+  max-width: 550px;
   color: $text-header-color;
   font-size: $header-50;
   font-weight: $font-weight-700;
@@ -293,6 +294,15 @@ img {
   grid-template-columns: repeat(3, auto);
   max-width: 122px;
   gap: 26px;
+}
+
+.forex-hero__description-wrapper {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 36px;
 }
 
 //FOREX//
@@ -368,9 +378,43 @@ img {
   padding: 0 0 50px;
 }
 
+.forex-hero {
+  background-image: url('/img/forex-trader-bot.png');
+  background-position: 75% 100px;
+  background-repeat: no-repeat;
+  background-size: 40%;
+}
+
+@media (max-width: 1198px) {
+  .forex-hero__title {
+    font-size: $header-40;
+  }
+}
+
 @media (max-width: 991.98px) {
   .article-page__list {
     display: none;
+  }
+
+  .forex-hero__title {
+    font-size: $header-30;
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .forex-hero__title {
+    font-size: 40px;
+    max-width: 470px;
+  }
+
+  .forex-hero__header {
+    margin-top: 230px;
+  }
+
+  .forex-hero {
+    background-position: 50% 80px;
+    background-size: 60%;
   }
 }
 
@@ -386,13 +430,10 @@ img {
     margin-bottom: 30px;
   }
 
-  .forex-hero__header {
-    margin-top: 40px;
-  }
-
   .forex-article__note-container {
     grid-template-columns: 1fr;
   }
+
   .forex-article__note-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -413,8 +454,9 @@ img {
   }
 
   .forex-hero__title {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-bottom: 10px;
+    max-width: 350px;
   }
 
   .forex-hero__author {
@@ -453,10 +495,15 @@ img {
   .forex-why-use__img-description {
     line-height: 20px;
   }
+
+  .forex-hero__header {
+    margin-top: 50%;
+  }
 }
 
 @media (max-width: 320px) {
   .forex-hero__title {
     font-size: 24px;
+    max-width: 260px;
   }
 }
