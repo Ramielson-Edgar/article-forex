@@ -8,12 +8,12 @@ $header-25: clamp(1.31rem, calc(1.21rem + 0.49vw), 1.56rem);
 $header-30: clamp(1.31rem, calc(1.09rem + 1.1vw), 1.88rem);
 $text-20: clamp(1.25rem, calc(1.34rem + -0.12vw), 1.31rem);
 
-$text-header-color: #03206c;
+$text-header-color: #343434;
 $text-white-color: #fff;
 $text-color: #252525;
 $link-static-color: #6a6a6a;
 
-$btn-color: #516eb9;
+$btn-color: #18CE42;
 
 $link-color: #2c67fe;
 $social-media-color: #d9d9d9;
@@ -82,12 +82,16 @@ img {
 @mixin center-flex($type: 'all') {
   display: flex;
 
-  @if ($type == 'all') {
+  @if ($type =='all') {
     justify-content: center;
     align-items: center;
-  } @else if ($type == 'hor') {
+  }
+
+  @else if ($type =='hor') {
     justify-content: center;
-  } @else if ($type == 'ver') {
+  }
+
+  @else if ($type =='ver') {
     align-items: center;
   }
 }
@@ -104,7 +108,7 @@ img {
   gap: $gap;
 }
 
-.btn-forex-bot {
+.btn-copy-trading {
   padding: 23px 71px;
   font-weight: $font-weight-400;
   color: $text-white-color;
@@ -123,7 +127,7 @@ img {
   &:focus,
   &:hover {
     color: $text-white-color;
-    background-color: #5787ff;
+    background-color: #17C33E;
   }
 }
 
@@ -160,6 +164,7 @@ img {
   text-decoration: none;
   color: $link-static-color;
   transition: all 0.3s ease-in;
+
   &:hover,
   &:focus {
     color: $link-color;
@@ -232,12 +237,17 @@ img {
   padding: 50px 0;
 }
 
-.forex-hero {
-  background-color: #f6fafc;
-  padding: 150px 0 70px;
+
+.copy-trading-hero {
+  background-color: #343434;
+  padding: 150px 0 80px;
+  background-image: url('/img/copy-trading-banner.png'), url('/img/green-circle.png');
+  background-position: 75% 100%, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 45%, cover;
 }
 
-.forex-hero__author {
+.copy-trading_author {
   display: grid;
   grid-template-columns: 35px 1fr;
   align-items: center;
@@ -245,33 +255,34 @@ img {
   margin-bottom: 40px;
 }
 
-.forex-hero__author-container {
+.copy-trading__author-container {
   display: flex;
   flex-direction: column;
   max-width: 170px;
 }
 
-.forex-hero__author-data {
+.copy-trading__author-data {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 10px;
 }
 
-.forex-hero__title {
-  max-width: 550px;
-  color: $text-header-color;
+.copy-trading__title {
+  max-width: 356px;
+  color: $text-white-color;
   font-size: $header-50;
   font-weight: $font-weight-700;
   line-height: 1.1;
   margin-bottom: 40px;
 }
 
-.forex-hero__author-name {
+.copy-trading__author-name {
   font-size: 14px;
+  color: $text-white-color;
   font-weight: $font-weight-700;
 }
 
-.forex-hero__author-date {
+.copy-trading__author-date {
   font-size: 10px;
   line-height: 14px;
   color: #6a6a6a;
@@ -281,22 +292,23 @@ img {
   filter: drop-shadow(0px 6px 20px rgba(125, 125, 125, 0.2));
 }
 
-.forex-hero__social-media-icon {
+.copy-trading__social-media-icon {
   fill: #2c67fe;
+
   &:hover,
   &:focus {
     fill: #5787ff;
   }
 }
 
-.forex-hero__social-media {
+.copy-trading__social-media {
   display: grid;
   grid-template-columns: repeat(3, auto);
   max-width: 122px;
   gap: 26px;
 }
 
-.forex-hero__description-wrapper {
+.copy-trading__description-wrapper {
   display: grid;
   grid-template-columns: 35px 1fr;
   align-items: center;
@@ -305,89 +317,137 @@ img {
   margin-bottom: 36px;
 }
 
-//FOREX//
 
-.forex-article__note-container {
-  position: relative;
+.what-copy {
+  padding: 0 0 80px;
+}
 
+.what-copy__note-container {
   display: grid;
   grid-template-columns: 30px 1fr;
   column-gap: 20px;
   padding: 30px;
-  margin-bottom: 70px;
-
-  background-color: #f9f9f9;
+  margin: 70px 0;
+  position: relative;
+  background-color: #F9F9F9;
 
   &::before {
     position: absolute;
+    display: block;
+    content: "";
     top: 0;
     left: 0;
-    display: block;
-    content: '';
-
-    width: 4px;
     height: 100%;
-
-    background-color: #2c67fe;
+    width: 3px;
+    background-color: $link-color;
   }
-}
-
-.forex-why-use__sub-header,
-.forex-why-use__title,
-.forex-article__note-header {
-  font-weight: $font-weight-700;
-  color: $text-header-color;
-}
-
-.forex-why-use__title {
-  font-size: $header-40;
-  margin-bottom: 40px;
-}
-
-.forex-article__paragraph {
-  color: $text-color;
-}
-
-.forex-article__paragraph-one {
-  margin-bottom: 50px;
-}
-
-.forex-why-use__img-description {
-  font-size: 14px;
-  color: #aaaaaa;
-  margin-top: 26px;
-}
-
-.forex-why-use__sub-header {
-  margin-bottom: 34px;
-}
-
-.forex-why-use__bottom-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 70px;
 }
 
 .icon-document {
   margin-top: 10px;
 }
 
-.forex-why-use,
-.forex-benefit {
-  padding: 0 0 50px;
+.what-copy__note-header {
+  font-weight: $font-weight-700;
 }
 
-.forex-hero {
-  background-image: url('../../img/forex-trader-bot.png');
-  background-position: 75% 100px;
-  background-repeat: no-repeat;
-  background-size: 40%;
+.copy-trading__paragraph {
+  color: $text-color;
 }
+
+.start-generating {
+  padding: 0 0 70px;
+}
+
+
+.start-generating__sub-header,
+.start-generating__title,
+.what-copy__title {
+  font-weight: $font-weight-700;
+  margin-bottom: 40px;
+}
+
+.what-copy__list {
+  @extend %list-style;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 90px;
+  margin: 50px 0 50px;
+}
+
+.what-copy__header {
+  font-weight: $font-weight-700;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.what-copy__item {
+  max-width: 800px;
+  padding-bottom: 40px;
+}
+
+.what-copy__item:not(:last-child) {
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.what-copy__img-description {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-top: 26px;
+}
+
+.start-generating__paragraph {
+  color: #aaaaaa;
+  font-size: 1.563rem;
+}
+
+
+.start-generating__step {
+  font-weight: $font-weight-700
+}
+
+.start-generating__list {
+  @extend %list-style;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  max-width: 800px;
+  margin-bottom: 70px;
+}
+
+.start-generating__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}
+
+.start-generating__bottom-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-copy-trading__footer {
+  color: $btn-color;
+  border: 2px solid $btn-color;
+  background-color: transparent;
+
+  &:focus,
+  &:hover {
+    color: $text-white-color;
+    background-color: $btn-color;
+  }
+}
+
 
 @media (max-width: 1198px) {
-  .forex-hero__title {
-    font-size: $header-40;
+  .copy-trading-hero {
+    background-position: 80% 100%, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 520px, cover;
+
   }
 }
 
@@ -400,116 +460,164 @@ img {
     font-size: $header-30;
     max-width: 330px;
   }
+
+
+  .copy-trading__description,
+  .copy-trading__header {
+    @include center-flex('all')
+  }
+
+  .copy-trading-hero {
+    background-image:url("/img/copy-trading-banner.png"), url('/img/green-circle__991.png');
+    background-position: 50% 100%, 100% 50%;
+    background-size: 45%, cover;
+
+    padding: 100px 0 30%;
+  }
+
+  .copy-trading__title {max-width: 100%;}
+  .copy-trading__description {
+    align-items: unset;
+  }
+
+  .copy-trading__description-wrapper {margin-right: 30px;}
+  .copy-trading__author-data {align-items: baseline;}
+
+  .start-generating__sub-header {
+    max-width: 600px;
+  }
+  
+
 }
 
 @media (max-width: 767.98px) {
-  .forex-hero__title {
-    font-size: 40px;
-    max-width: 470px;
+  .what-copy {
+    padding: 0 0 50px;
   }
 
-  .forex-hero__header {
-    margin-top: 230px;
+  .what-copy__note-container {padding: 20px;}
+
+  .start-generating__text,
+  .start-generating__step,
+  .what-copy__text,
+  .copy-trading__paragraph {
+    font-size: 1rem;
+    line-height: 24px;
   }
 
-  .forex-hero {
-    background-position: 50% 80px;
-    background-size: 60%;
+  .start-generating__title {
+    margin-bottom: 20px;
   }
+
+  .what-copy__note-link {font-size: 14px;}
+
+
+  .what-copy__list {
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .start-generating__item {gap: 10px;}
+
 }
 
 @media (max-width: 575.98px) {
   .section-padding {
     padding: 50px 0;
   }
-  .forex-article__note-container {
-    margin-bottom: 50px;
+
+  .start-generating__sub-header  {
+    font-size: 1.2rem;
+    line-height: 24px;
+    max-width: 420px;
   }
 
-  .forex-why-use__title {
-    margin-bottom: 30px;
+  .what-copy__note-container {
+    margin:0 0 50px;
   }
 
-  .forex-article__note-container {
-    grid-template-columns: 1fr;
+  .what-copy__title {
+    margin-bottom: 20px;
+    line-height: 36px;
   }
 
-  .forex-article__note-list {
+
+  .what-copy__item:not(:last-child) {padding-bottom: 40px;}
+
+  .copy-trading-hero {
+    background-position: 50% 100%, center 90px;
+    background-size: 60%, cover;
+
+    padding: 100px 0 40%;
+  }
+
+  .copy-trading__description-wrapper {margin-right: 10px;}
+  .what-copy__note-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
   }
 
-  .forex-article__note-text {
+  .what-copy__note-header {margin-bottom: 30px;}
+  .icon-document {margin-top: 0;}
+
+  .btn-copy-trading  {
     font-size: 1rem;
-    line-height: 24px;
+    padding: 15px;
   }
 
-  .icon-document {
-    margin: 0 0 10px;
-  }
-
-  .forex-article__note-header {
-    margin-bottom: 30px;
-  }
-
-  .forex-hero__title {
-    font-size: 1.875rem;
-    margin-bottom: 10px;
-    max-width: 350px;
-  }
-
-  .forex-hero__author {
+  .copy-trading__title {
     margin-bottom: 20px;
   }
 
-  .forex-hero {
-    padding: 90px 0 50px;
+  .start-generating__list,
+  .start-generating__item {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 10px;
   }
 
-  .btn-forex-bot {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 20px 10px;
+  .start-generating__list {
+    gap:50px;
+    margin-bottom: 50px;
   }
 
-  .article-page-logo {
-    width: 80px;
+  .copy-trading__social-media {gap: 10px;}
+
+  .start-generating__title {
+    font-size: 20px;
   }
 
-  .forex-article__paragraph {
-    font-size: 1rem;
-    line-height: 24px;
-  }
-
-  .forex-why-use__title {
-    font-size: 24px;
-    margin-bottom: 24px;
-  }
-
-  .forex-why-use__sub-header {
-    font-size: 1rem;
-    line-height: 24px;
-  }
-
-  .forex-why-use__img-description {
+  .what-copy__img-description {
     line-height: 20px;
   }
 
-  .forex-hero__header {
-    margin-top: 50%;
+  .what-copy__list {
+    margin: 50px 0 0;
   }
 }
 
 @media (max-width: 375px) {
-  .forex-hero__title {
-    font-size: calc(33px - 1vw);
+  .copy-trading__description-wrapper {margin-bottom: 0;}
+  .copy-trading-hero {
+    padding: 80px 0 50%;
   }
+
+  .copy-trading__description {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .copy-trading__header {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
 }
 
+
 @media (max-width: 320px) {
-  .forex-hero__title {
-    font-size: 24px;
-    max-width: 260px;
+  .copy-trading__paragraph {
+    font-size: 15px;
   }
 }
